@@ -13,7 +13,7 @@ fi
 if [[ ! -f "/server/forge.jar" ]]; then
     echo "Downloading and installing Minecraft Forge..."
 
-    curl -o /server/forge-installer.jar -L "https://files.minecraftforge.net/maven/net/minecraftforge/forge/1.14.4-28.2.0/forge-1.14.4-28.2.0-installer.jar"
+    curl -o /server/forge-installer.jar -L "https://files.minecraftforge.net/maven/net/minecraftforge/forge/${FORGE_VERSION}/forge-${FORGE_VERSION}-installer.jar"
     java -jar /server/forge-installer.jar --installServer /server
     rm -f /server/forge-installer.jar
     mv /server/forge*.jar /server/forge.jar
