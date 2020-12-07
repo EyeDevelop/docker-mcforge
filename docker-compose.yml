@@ -1,0 +1,15 @@
+version: '3'
+services:
+  forge:
+    build:
+      context: ./server
+    image: eyedevelop/forge:1.14.4
+    container_name: mcforge
+    volumes:
+      - "./vol/server:/server"
+    restart: "no"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - MC_VERSION=1.14.4
+      - MEMORY_USAGE=1G
